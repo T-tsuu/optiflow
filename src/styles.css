@@ -1,0 +1,151 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-amber: var(--amber);
+  --color-amber-hover: var(--amber-hover);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-text-inverse: var(--text-inverse);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* shadcn aliases */
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--text);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--text);
+  --color-primary: var(--navy);
+  --color-primary-foreground: var(--text-inverse);
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--text);
+  --color-muted: var(--surface-2);
+  --color-muted-foreground: var(--text-muted);
+  --color-accent: var(--surface-2);
+  --color-accent-foreground: var(--text);
+  --color-destructive: var(--error);
+  --color-destructive-foreground: #ffffff;
+  --color-input: var(--border);
+  --color-ring: var(--amber);
+  --color-ring-offset-background: var(--bg);
+}
+
+:root {
+  --radius: 6px;
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --surface-2: #edece8;
+  --border: #ddddd6;
+  --navy: #1e2b3c;
+  --navy-light: #2c3f57;
+  --amber: #f0c418;
+  --amber-hover: #d4ab0f;
+  --text: #1a1a1a;
+  --text-muted: #666666;
+  --text-faint: #999895;
+  --text-inverse: #f5f4f0;
+  --success: #3d7a3a;
+  --warning: #c97b1a;
+  --error: #b03a2e;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html, body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+  table, .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  h1 { font-size: 22px; font-weight: 600; }
+  h2 { font-size: 16px; font-weight: 600; }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--amber);
+    color: var(--text);
+    font-weight: 500;
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background-color 120ms;
+  }
+  .btn-primary:hover { background-color: var(--amber-hover); }
+  .btn-secondary {
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    font-weight: 500;
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 6px;
+  }
+  .btn-secondary:hover { background-color: var(--surface-2); }
+  .btn-ghost {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 6px;
+  }
+  .btn-ghost:hover { background-color: var(--surface-2); }
+  .card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .input {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--text);
+    width: 100%;
+    outline: none;
+  }
+  .input:focus { border-color: var(--navy); }
+  .label { font-size: 12px; font-weight: 500; color: var(--text-muted); }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .badge-success { color: var(--success); border-color: color-mix(in srgb, var(--success) 30%, var(--border)); background-color: color-mix(in srgb, var(--success) 8%, var(--surface)); }
+  .badge-warning { color: var(--warning); border-color: color-mix(in srgb, var(--warning) 30%, var(--border)); background-color: color-mix(in srgb, var(--warning) 8%, var(--surface)); }
+  .badge-error   { color: var(--error);   border-color: color-mix(in srgb, var(--error) 30%, var(--border));   background-color: color-mix(in srgb, var(--error) 8%, var(--surface)); }
+  .badge-info    { color: var(--navy);    border-color: color-mix(in srgb, var(--navy) 25%, var(--border));    background-color: color-mix(in srgb, var(--navy) 6%, var(--surface)); }
+}
